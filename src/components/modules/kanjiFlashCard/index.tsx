@@ -94,7 +94,6 @@ const KanjiFlashCard = () => {
   const clearSelectedKanji = () => {
     setState({ ...state, selectedKanji: [] });
     window.localStorage.removeItem("selectedKanji");
-    history.replace({ pathname: location.pathname });
   };
 
   const memorize = () => {
