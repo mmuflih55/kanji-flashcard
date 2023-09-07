@@ -24,15 +24,20 @@ export const KanjiCard: FC<{
           <div className="w-full flex flex-col p-2 text-xs">
             <div className="flex justify-between">
               <div className="w-2/5 ">
-                <span className="flex justify-between">stroke :</span>
+                <div className="h-full flex justify-between">
+                  <span>stroke</span>
+                </div>
               </div>
               <div className="w-1/2 ">
                 <span>{kanji.stroke_count}</span>
               </div>
             </div>
+            <hr className="my-2" />
             <div className="flex justify-between">
               <div className="w-2/5 ">
-                <span className="flex justify-between">kun-readings</span>
+                <div className="h-full flex justify-between items-center">
+                  <span>kun readings</span>
+                </div>
               </div>
               <div className="w-1/2">
                 <span>
@@ -48,9 +53,12 @@ export const KanjiCard: FC<{
                 </span>
               </div>
             </div>
+            <hr className="my-2" />
             <div className="flex justify-between">
               <div className="w-2/5 ">
-                <span className="flex justify-between">on-readings</span>
+                <div className="h-full flex justify-between items-center">
+                  <span>on readings</span>
+                </div>
               </div>
               <div className="w-1/2">
                 <span>
@@ -66,9 +74,12 @@ export const KanjiCard: FC<{
                 </span>
               </div>
             </div>
+            <hr className="my-2" />
             <div className="flex justify-between">
               <div className="w-2/5">
-                <span className="flex justify-between">meanings :</span>
+                <div className="h-full flex justify-between items-center">
+                  <span>meanings</span>
+                </div>
               </div>
               <div className="w-1/2">
                 <ul className="list-disc">

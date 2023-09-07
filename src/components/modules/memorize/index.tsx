@@ -75,7 +75,10 @@ const Memorize = () => {
       <div className="h-full w-full flex flex-col justify-between">
         {state.isStart ? (
           <div className="w-full h-full flex justify-center items-center">
-            <KanjiCard kanji={state.memorizedKanji[state.currentIndex]} />
+            <KanjiCard
+              key={state.currentIndex}
+              kanji={state.memorizedKanji[state.currentIndex]}
+            />
           </div>
         ) : (
           <FlashCardList kanjiList={state.selectedKanji} />
