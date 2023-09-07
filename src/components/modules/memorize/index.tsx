@@ -74,9 +74,12 @@ const Memorize = () => {
     if (state.isStart) {
       try {
         adsbygoogle = window.adsbygoogle || [];
-        adsbygoogle.push({});
-        adsbygoogle.push({});
-        adsbygoogle.push({});
+        if (adsbygoogle.loaded) {
+          adsbygoogle.push({});
+          adsbygoogle.push({});
+          adsbygoogle.push({});
+        }
+        console.log(adsbygoogle);
       } catch (e) {
         console.log(e);
       }
@@ -93,17 +96,15 @@ const Memorize = () => {
                 className="block adsbygoogle"
                 data-ad-client="ca-pub-2478817977793633"
                 data-ad-slot="8444970458"
-                data-ad-format="fluid"
                 data-full-width-responsive="true"
               ></ins>
             </div>
             <div className="w-full h-full flex justify-between items-center">
-              <div className="h-full w-full max-w-[250px]">
+              <div className="h-full w-full max-w-[200px]">
                 <ins
-                  className="block adsbygoogle"
+                  className="hidden sm:block adsbygoogle"
                   data-ad-client="ca-pub-2478817977793633"
                   data-ad-slot="6668854358"
-                  data-ad-format="fluid"
                   data-full-width-responsive="true"
                 ></ins>
               </div>
@@ -111,12 +112,11 @@ const Memorize = () => {
                 key={state.currentIndex}
                 kanji={state.memorizedKanji[state.currentIndex]}
               />
-              <div className="h-full w-full max-w-[250px]">
+              <div className="h-full w-full max-w-[200px]">
                 <ins
-                  className="block adsbygoogle"
+                  className="hidden sm:block adsbygoogle"
                   data-ad-client="ca-pub-2478817977793633"
                   data-ad-slot="6668854358"
-                  data-ad-format="fluid"
                   data-full-width-responsive="true"
                 ></ins>
               </div>
