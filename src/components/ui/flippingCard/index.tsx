@@ -35,10 +35,10 @@ export const FlippingCard: FC<{
           isClicked ? "[transform:rotateY(180deg)]" : ""
         } ${selected ? "border-red-500" : ""}`}
       >
-        <div className="absolute  h-full w-full inset-0 [backface-visibility:hidden]">
+        <div className="absolute  h-full w-full inset-0 bg-white [backface-visibility:hidden] [-moz-backface-visibility:hidden]">
           {frontPage}
         </div>
-        <div className="absolute inset-0 h-full w-full rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden]">
+        <div className="absolute inset-0 h-full w-full bg-white [transform:rotateY(180deg)] [backface-visibility:hidden] [-moz-backface-visibility:hidden]">
           {backPage}
         </div>
       </div>
