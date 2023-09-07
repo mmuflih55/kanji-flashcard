@@ -90,9 +90,9 @@ const Memorize = () => {
       <div className="h-full w-full flex flex-col justify-between">
         {state.isStart ? (
           <>
-            <div className="block w-full h-full max-h-[100px] overscroll-none">
+            <div className="relative w-full h-full max-h-[100px] overscroll-none">
               <ins
-                className="block adsbygoogle max-h-[100px] h-[100px]"
+                className="absolute adsbygoogle max-h-[100px] h-[100px]"
                 data-ad-client="ca-pub-2478817977793633"
                 data-ad-slot="8444970458"
                 data-ad-format="horizontal"
