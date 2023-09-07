@@ -95,15 +95,17 @@ const Memorize = () => {
                 className="block adsbygoogle"
                 data-ad-client="ca-pub-2478817977793633"
                 data-ad-slot="8444970458"
+                data-ad-format="horizontal"
                 data-full-width-responsive="true"
               ></ins>
             </div>
-            <div className="w-full h-full flex justify-between items-center">
-              <div className="h-full w-full max-w-[200px]">
+            <div className="w-full h-full flex justify-center md:justify-between items-center">
+              <div className="hidden sm:block h-full w-full max-w-[200px]">
                 <ins
                   className="hidden sm:block adsbygoogle"
                   data-ad-client="ca-pub-2478817977793633"
                   data-ad-slot="6668854358"
+                  data-ad-format="vertical"
                   data-full-width-responsive="true"
                 ></ins>
               </div>
@@ -111,11 +113,12 @@ const Memorize = () => {
                 key={state.currentIndex}
                 kanji={state.memorizedKanji[state.currentIndex]}
               />
-              <div className="h-full w-full max-w-[200px]">
+              <div className="hidden sm:block h-full w-full max-w-[200px]">
                 <ins
                   className="hidden sm:block adsbygoogle"
                   data-ad-client="ca-pub-2478817977793633"
                   data-ad-slot="6668854358"
+                  data-ad-format="vertical"
                   data-full-width-responsive="true"
                 ></ins>
               </div>
