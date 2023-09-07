@@ -11,7 +11,7 @@ const SelectGrade: FC<{
     setGrade(grade);
   };
   return (
-    <div className="flex flex-wrap justify-center p-2 m-2">
+    <div className="flex sm:justify-center sm:flex-wrap p-2 m-2 max-w-full overflow-x-scroll">
       {gradeList.map((grade, i) => (
         <Label
           key={i}

@@ -70,16 +70,58 @@ const Memorize = () => {
       setSelectedKanji(JSON.parse(savedKanjis));
   }, [setSelectedKanji, state.selectedKanji]);
 
+  useEffect(() => {
+    if (state.isStart) {
+      try {
+        adsbygoogle = window.adsbygoogle || [];
+        adsbygoogle.push({});
+        adsbygoogle.push({});
+        adsbygoogle.push({});
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }, [state.isStart]);
+
   return (
     <>
       <div className="h-full w-full flex flex-col justify-between">
         {state.isStart ? (
-          <div className="w-full h-full flex justify-center items-center">
-            <KanjiCard
-              key={state.currentIndex}
-              kanji={state.memorizedKanji[state.currentIndex]}
-            />
-          </div>
+          <>
+            <div className="block w-full h-full max-h-[100px] overscroll-none">
+              <ins
+                className="block adsbygoogle"
+                data-ad-client="ca-pub-2478817977793633"
+                data-ad-slot="8444970458"
+                data-ad-format="fluid"
+                data-full-width-responsive="true"
+              ></ins>
+            </div>
+            <div className="w-full h-full flex justify-between items-center">
+              <div className="h-full w-full max-w-[250px]">
+                <ins
+                  className="block adsbygoogle"
+                  data-ad-client="ca-pub-2478817977793633"
+                  data-ad-slot="6668854358"
+                  data-ad-format="fluid"
+                  data-full-width-responsive="true"
+                ></ins>
+              </div>
+              <KanjiCard
+                key={state.currentIndex}
+                kanji={state.memorizedKanji[state.currentIndex]}
+              />
+              <div className="h-full w-full max-w-[250px]">
+                <ins
+                  className="block adsbygoogle"
+                  data-ad-client="ca-pub-2478817977793633"
+                  data-ad-slot="6668854358"
+                  data-ad-format="fluid"
+                  data-full-width-responsive="true"
+                ></ins>
+              </div>
+            </div>
+          </>
         ) : (
           <FlashCardList kanjiList={state.selectedKanji} />
         )}
