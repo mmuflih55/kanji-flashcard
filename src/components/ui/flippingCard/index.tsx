@@ -22,6 +22,7 @@ export const FlippingCard: FC<{
       if (onClicked) onClicked();
     }
   };
+
   return (
     <div
       className={`group h-[280px] w-[200px] [perspective:1000px] justify-self-auto ${
