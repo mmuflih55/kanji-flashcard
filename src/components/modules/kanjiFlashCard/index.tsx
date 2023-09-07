@@ -1,5 +1,5 @@
 import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import SelectGrade from "@/components/modules/selectGrades";
 import FlashCardList from "../flashCardList";
 import Button from "@/components/ui/button";
@@ -9,6 +9,8 @@ import Spinner from "@/components/ui/spinner";
 
 const KanjiFlashCard = () => {
   const navigate = useNavigate();
+  // const history = useHistory();
+  let [searchParams, setSearchParams] = useSearchParams();
 
   const [state, setState] = useState<{
     selectedGrades: string[];
@@ -92,6 +94,7 @@ const KanjiFlashCard = () => {
   const clearSelectedKanji = () => {
     setState({ ...state, selectedKanji: [] });
     window.localStorage.removeItem("selectedKanji");
+    history.replace({ pathname: location.pathname });
   };
 
   const memorize = () => {
@@ -110,6 +113,15 @@ const KanjiFlashCard = () => {
     const savedKanjis = window.localStorage.getItem("selectedKanji");
     if (savedKanjis) setSelectedKanji(JSON.parse(savedKanjis));
   }, [setSelectedKanji]);
+
+  useEffect(() => {
+    const err = searchParams.get("errMsg");
+    if (err) {
+      setErrMsg(err);
+      searchParams.delete("errMsg");
+      setSearchParams(searchParams);
+    }
+  }, [searchParams, setSearchParams]);
 
   return (
     <>

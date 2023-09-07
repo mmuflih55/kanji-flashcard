@@ -66,9 +66,9 @@ const Memorize = () => {
 
   useEffect(() => {
     const savedKanjis = window.localStorage.getItem("selectedKanji");
-    if (savedKanjis && state.selectedKanji.length === 0)
-      setSelectedKanji(JSON.parse(savedKanjis));
-  }, [setSelectedKanji, state.selectedKanji]);
+    if (savedKanjis) setSelectedKanji(JSON.parse(savedKanjis));
+    else navigate("/?errMsg=Please choose kanji first.");
+  }, [setSelectedKanji, navigate]);
 
   useEffect(() => {
     if (state.isStart) {
