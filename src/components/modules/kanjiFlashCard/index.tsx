@@ -108,9 +108,8 @@ const KanjiFlashCard = () => {
 
   useEffect(() => {
     const savedKanjis = window.localStorage.getItem("selectedKanji");
-    if (savedKanjis && state.selectedKanji.length === 0)
-      setSelectedKanji(JSON.parse(savedKanjis));
-  }, [setSelectedKanji, state.selectedKanji]);
+    if (savedKanjis) setSelectedKanji(JSON.parse(savedKanjis));
+  }, [setSelectedKanji]);
 
   return (
     <>

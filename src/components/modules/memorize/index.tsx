@@ -79,7 +79,6 @@ const Memorize = () => {
           adsbygoogle.push({});
           adsbygoogle.push({});
         }
-        console.log(adsbygoogle);
       } catch (e) {
         console.log(e);
       }
