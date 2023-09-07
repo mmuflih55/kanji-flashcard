@@ -59,6 +59,11 @@ const Memorize = () => {
       restart();
     }
   };
+  const prev = () => {
+    if (state.currentIndex > 0) {
+      setState({ ...state, currentIndex: state.currentIndex - 1 });
+    }
+  };
 
   const back = () => {
     navigate(-1);
@@ -100,9 +105,9 @@ const Memorize = () => {
               ></ins>
             </div>
             <div className="w-full h-full flex justify-center md:justify-between items-center">
-              <div className="hidden sm:block h-full w-full max-w-[200px]">
+              <div className="hidden sm:block sm:relative h-full w-full max-w-[200px]">
                 <ins
-                  className="hidden sm:block adsbygoogle max-w-[200px]"
+                  className="hidden sm:block sm:absolute adsbygoogle h-full w-full max-w-[200px]"
                   data-ad-client="ca-pub-2478817977793633"
                   data-ad-slot="6668854358"
                   data-ad-format="vertical"
@@ -113,9 +118,9 @@ const Memorize = () => {
                 key={state.currentIndex}
                 kanji={state.memorizedKanji[state.currentIndex]}
               />
-              <div className="hidden sm:block h-full w-full max-w-[200px]">
+              <div className="hidden sm:block sm:relative h-full w-full max-w-[200px]">
                 <ins
-                  className="hidden sm:block adsbygoogle max-w-[200px]"
+                  className="hidden sm:block sm:absolute adsbygoogle h-full w-full max-w-[200px]"
                   data-ad-client="ca-pub-2478817977793633"
                   data-ad-slot="6668854358"
                   data-ad-format="vertical"
@@ -127,22 +132,29 @@ const Memorize = () => {
         ) : (
           <FlashCardList kanjiList={state.selectedKanji} />
         )}
-        <div className="w-full flex items-center gap-3 p-2 justify-center">
-          <Button onClick={back}>Back</Button>
-          {state.isStart ? (
-            <Button onClick={next}>Next</Button>
-          ) : (
-            <Button onClick={start}>Start</Button>
-          )}
+        <div className="w-full flex flex-col md:flex-row items-center gap-3 p-2 justify-center">
+          <div className="flex gap-3">
+            <Button onClick={back}>Back</Button>
+            {state.isStart ? (
+              <>
+                {state.currentIndex !== 0 && (
+                  <Button onClick={prev}>Previous</Button>
+                )}
+                <Button onClick={next}>Next</Button>
+              </>
+            ) : (
+              <Button onClick={start}>Start</Button>
+            )}
+          </div>
           {state.isStart && (
-            <>
+            <div className="flex gap-3 items-center">
               <Button onClick={restart}>Restart</Button>
               <div>
                 <span>
                   {state.currentIndex + 1}/{state.selectedKanji.length}
                 </span>
               </div>
-            </>
+            </div>
           )}
         </div>
       </div>
