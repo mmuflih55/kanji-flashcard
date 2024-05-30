@@ -17,7 +17,7 @@ export const KanjiCard: FC<{
         </div>
       }
       backPage={
-        <div className="w-full h-full flex flex-col justify-start items-center max-h-full overflow-scroll">
+        <div className="w-full h-full flex flex-col justify-start items-center max-h-full overflow-scroll no-scrollbar">
           <div className="py-4">
             <span className="text-4xl">{kanji.kanji}</span>
           </div>
